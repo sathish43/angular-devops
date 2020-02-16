@@ -1,9 +1,9 @@
 ### STAGE 1: Build ###
 FROM node:13.8-alpine AS build
 WORKDIR /app
-COPY package.json ./
+COPY ./source/package.json ./
 RUN npm install
-COPY . .
+COPY ./source ./
 RUN npm run build
 
 ### STAGE 2: Run ###
